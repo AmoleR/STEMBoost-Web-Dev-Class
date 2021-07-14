@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1 id="title">Web Development Class 2</h1>
+    Hello everyone! Welcome to class 2; here's what we'll be doing today:
+    <h2>Contents</h2>
+    <a href="#title">Title</a><br />
+    <a href="#guide">Guide</a><br />
+    <a href="#basic">Basic Tags</a><br />
+    <a href="#pre">Preformatted Text</a><br />
+    <a href="#list">Lists</a><br />
+    <h2 id="guide">HTML Guide</h2>
+    One important thing to keep in mind is that during the entire development,
+    there will be many unknown tags and other things as such. Go to
+    <a href="https://html.com/cheat-sheet/">https://html.com/cheat-sheet/</a> to
+    see an interactive explanation of all these tags.<br /><br />Keep in mind
+    that not <b>all</b> the tags will be used; you can feel free to explore
+    those tags, but there is no need to know them (for this course).
+    <h2 id="basic">Basic Tags</h2>
+    We'll start off with formatting tags, which is the simplest of the basics:
+    <ul>
+      <li>
+        To <b>bold</b> an element, we can use the syntax
+        <code>&lt;b&gt;[text]&lt;/b&gt;</code>. For example,
+        <code>&lt;b&gt;Hello&lt;/b&gt;</code> becomes <b>Hello</b>.<br /><br />
+        Keep in mind that <code>&lt;b&gt;...&lt;/b&gt;</code> and
+        <code>&lt;strong&gt;...&lt;/strong&gt;</code> have the same function.
+      </li>
+      <li>
+        To <i>italicize</i> an element, we can use the syntax
+        <code>&lt;i&gt;[text]&lt;/i&gt;</code>. For example,
+        <code>&lt;i&gt;Hello&lt;/i&gt;</code> becomes <i>Hello</i>.<br /><br />
+        Keep in mind that <code>&lt;i&gt;...&lt;/i&gt;</code> and
+        <code>&lt;em&gt;...&lt;/em&gt;</code> have the same function.
+      </li>
+      <li>
+        To <u>underline</u> an element, we can use the syntax
+        <code>&lt;u&gt;[text]&lt;/u&gt;</code>. For example,
+        <code>&lt;u&gt;Hello&lt;/u&gt;</code> becomes <u>Hello</u>.<br /><br />
+        Keep in mind that <b>this is not good practice.</b> For now, you can use
+        <code>&lt;u&gt;...&lt;/u&gt;</code>, but next class, we'll go over the
+        "correct" way to do this.
+      </li>
+      <li>
+        To <s>strikethrough</s> an element, we can use the syntax
+        <code>&lt;s&gt;[text]&lt;/s&gt;</code>. For example,
+        <code>&lt;s&gt;Hello&lt;/s&gt;</code> becomes <s>Hello</s>.<br /><br />
+        Keep in mind that <b>this is not good practice.</b> For now, you can use
+        <code>&lt;s&gt;...&lt;/s&gt;</code>, but next class, we'll go over the
+        "correct" way to do this. In addition, keep in mind that
+        <code>&lt;s&gt;...&lt;/s&gt;</code> and
+        <code>&lt;strike&gt;...&lt;/strike&gt;</code> have the same function.
+      </li>
+    </ul>
+    <h2 id="pre">Preformatted Text, Newlines, and More!</h2>
+    If you look at the source code of this website, you'll see that there are a
+    lot of seemingly random line breaks; for example, this sentence looks like
+    <pre>
+        <code>    If you look at the source code of this website, you'll see that there are a
+    lot of seemingly random line breaks; for example, this sentence looks like</code>
+    </pre>
+    Note the spaces at the front, and the intentional newline (and yes, you can
+    scroll). But in the rendered HTML output, that's not what it shows. The
+    reason is because spaces, tabs, or newlines (all called whitespaces) are
+    "eaten" up by HTML to separate different portions of text, and then are
+    replaced with spaces.<br /><br />
+    So you might ask "how would I, then, be able to add a newline"? The answer
+    is simple - use the <code>&lt;br /&gt;</code> tag. Now you might ask me two
+    questions:
+    <ol>
+      <li>Where's the closing tag?</li>
+      <li>
+        What's the small slash doing before the closing bracket of the tag?
+      </li>
+    </ol>
+    We can answer both questions very simply - for any tag,
+    <code>&lt;tag /&gt;</code> just means <code>&lt;tag&gt;&lt;/tag&gt;</code>.
+    So we're not missing out on any opening tag.<br /><br />
+    Now you might ask about how to insert two spaces. This is
+    <b>slightly</b> more challenging, but you'll run into the same issue later
+    on if you're trying to write a &lt; sign, and HTML ends up thinking it's a
+    tag. The 6 most important "escape sequences" are:
+    <ul>
+      <li><code>&amp;amp; = &amp;</code></li>
+      <li><code>&amp;gt; = &gt;</code></li>
+      <li><code>&amp;lt; = &lt;</code></li>
+      <li><code>&amp;quot; = &quot;</code></li>
+      <li><code>&amp;apos; = &apos;</code></li>
+      <li><code>&amp;nbsp; = &nbsp;</code> (non-breaking space character)</li>
+    </ul>
+    There are more (these can be seen when using Visual Studio Code), but they
+    play minimal importance. To add 2 spaces, you can do
+    <code>&amp;nbsp;&amp;nbsp;</code>, giving &quot;Hello&nbsp;&nbsp;James&quot;.
+    <h2 id="list">Lists</h2>
+    So far you've probably seen a lot of lists been used so far. This is
+    actually really simple to do! You don't count numbers or anything. If you
+    want a bulleted list, you start off with an
+    <code>&lt;ul&gt;...&lt;/ul&gt;</code> tag (<code>ul</code> stands for
+    unordered list). For numbered (or <b>ordered</b>) lists, you'd use
+    <code>&lt;ol&gt;...&lt;/ol&gt;</code>.<br /><br />
+    But I haven't told you how to put items there yet! All items are surrounded
+    by a <code>&lt;li&gt;...&lt;/li&gt;</code> tag. For example, the following
+    is an unordered list:
+    <ul>
+      <li>Item 1</li>
+      <li>Item 2</li>
+    </ul>
+    while by changing the "u" to an "o", we get
+    <ol>
+      <li>Item 1</li>
+      <li>Item 2</li>
+    </ol>
+    <h2 id="interactive">Interactive Elements</h2>
+    Going to any website, like <a href="https://www.google.com">Google</a>,
+    you'll see a lot of links and buttons; how can we make those? Links are
+    simple; you can use the syntax
+    <code>&lt;a href="[link to website"&gt;...&lt;/a&gt;</code> to make a link
+    to a website.<br /><br />
+    <b>href</b> stands for "hypertext reference", and <b>a</b> stands for
+    "anchor" (confusing as it is, you'll get it in a bit). To make a button,
+    such as <button>Click me!</button>, you can just do
+    <code>&lt;button&gt;...&lt;/button&gt;</code>. This won't actually
+    <b>do much</b> until we get into using JavaScript. To make a go to the
+    top button, we can use IDs to reference the top, such as
+    <code>&lt;a href="#[id]"&gt;...&lt;/a&gt;</code>.
+  </body>
+</html>
