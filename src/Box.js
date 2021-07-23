@@ -1,3 +1,5 @@
+// Most hooks start with use
+
 function Box(props) {
   // do stuff with box
   // for example return the box
@@ -13,6 +15,9 @@ function Box(props) {
     throw new Error(`${val} is not 0, 1, or 2.`);
   }
 
+  function onClick(event) {}
+  // here is hook
+
   return (
     <div
       style={{
@@ -21,14 +26,17 @@ function Box(props) {
         backgroundColor: getColor(props.val),
         border: "1px solid black",
       }}
-    >
-      Row {props.row + 1}
-      <br />
-      Column {props.col + 1}
-      <br />
-      Value {props.val}
-    </div>
+      onClick={onClick}
+    />
   );
 }
 
 export default Box;
+
+/**
+ *  _____________
+ * |            |
+ * |     Box    |        <=        Col
+ * |____________|
+ *
+ */
