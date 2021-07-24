@@ -22,12 +22,19 @@ function Box(props) {
     <div
       style={{
         height: "100px",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
         width: "100px",
         backgroundColor: getColor(props.val),
         border: "1px solid black",
       }}
       onClick={onClick}
-    />
+    >
+      <div>
+        ({props.col},{props.row})
+      </div>
+    </div>
   );
 }
 
