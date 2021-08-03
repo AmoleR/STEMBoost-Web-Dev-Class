@@ -1,6 +1,7 @@
 import { Component } from "react";
 import Confetti from "react-confetti";
 import Col from "./Col";
+import equal from "fast-deep-equal";
 
 /**
  * useEffect = componentDidMount, componentShouldUpdate, AND componentWillUnmount
@@ -174,6 +175,10 @@ class ReactBoard extends Component {
 
   constructor(props, context, updater) {
     super(props, context, updater);
+    this.initBoard(props);
+  }
+
+  initBoard(props) {
     if (typeof props.rows !== "number")
       throw new Error("Rows is not a number.");
     if (typeof props.cols !== "number")
@@ -183,6 +188,11 @@ class ReactBoard extends Component {
     if (props.rows <= 0 || props.rows > 10)
       throw new Error("There must be between 1 and 10 rows.");
     this.board = new Board(props.rows, props.cols);
+    this.setState({ error: "" });
+  }
+
+  componentDidUpdate(prevProps) {
+    if (!equal(prevProps, this.props)) this.initBoard(this.props);
   }
 
   onClick(col) {
@@ -196,7 +206,6 @@ class ReactBoard extends Component {
   }
 
   render() {
-    console.log(`Type of error is ${typeof this.state.error}`);
     const winner = this.board.winner;
     return (
       <div>
